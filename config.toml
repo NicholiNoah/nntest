@@ -1,0 +1,46 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Nicholi Noah"
+summaryLength = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.nav]]
+    identifier = "nicholi-noah"
+    name = "Biography"
+    url = "/"
+    weight = 1
+  [[menu.nav]]
+    identifier = "artwork"
+    name = "Artwork"
+    url = "/artwork/"
+    weight = 3
+  [[menu.nav]]
+    identifier = "professional"
+    name = "Professional"
+    url = "/professional/"
+    weight = 2
+  [[menu.nav]]
+    identifier = "contact"
+    name = "email: career@nicholinoah.com"
+    url = "mailto:career@nicholinoah.com"
+    weight = 4
+
+
+[security]
+  enableInlineShortcodes = false
+
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM)$']
+
+  [security.funcs]
+    getenv = ['^HUGO_', 'CONTEXT']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
